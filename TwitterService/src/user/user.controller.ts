@@ -24,5 +24,5 @@ export const controlReadAllUsers = async (req: Request, res: Response) => {
     if(users)
         res.status(200).json(users);
     else 
-        res.status(404).json({ message: "Users could not be read" });
+        res.status(404).json({ message: "Users could not be read (in controlReadAllUsers)" });
 };

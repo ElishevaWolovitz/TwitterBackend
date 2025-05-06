@@ -8,7 +8,7 @@ export const reposCreateUser = async (user: UserType): Promise<UserType> => {
     const newUser = new UserModel(user);
     await newUser.save();
     if(!newUser)
-        throw new Error('User could not be created in DB');
+        throw new Error('User could not be created in DB (in reposCreateUser)');
     return newUser; 
 };
 
@@ -17,6 +17,6 @@ export const reposCreateUser = async (user: UserType): Promise<UserType> => {
 export const reposReadAllUsers = async (): Promise<UserType[]>  => {
     const readUsers = await UserModel.find();
     if(!readUsers)
-        throw new Error('Users not found in DB');
+        throw new Error('Users not found in DB (in reposReadAllUsers)');
     return readUsers;
 }
