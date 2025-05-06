@@ -2,11 +2,12 @@ import mongoose, {Document, Schema, model} from 'mongoose';
 import { TweetType } from '../types/tweet.type';
 
 const tweetSchema: Schema = new Schema({
-  _id: {
-    type: String, 
-    required: true
-  },
-  //needs to be indexed
+  // Q: App does not run when this is uncommented. Why?
+  // _id: {
+  //   type: String, 
+  //   required: true
+  // },
+  //Q: needs to be indexed here in code or only in compass is okay?
   tweetName: { 
     type: String, 
     required: true,
