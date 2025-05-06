@@ -14,7 +14,7 @@ export const reposCreateUser = async (user: UserType): Promise<UserType> => {
 
 //Read All/Get All
 //Q: Is the return type here correct? 
-export const reposReadAllUser = async (): Promise<UserType[]>  => {
+export const reposReadAllUsers = async (): Promise<UserType[]>  => {
     const readUsers = await UserModel.find();
     if(!readUsers)
         throw new Error('Users not found in DB');
