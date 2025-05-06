@@ -4,7 +4,7 @@ import { TweetType } from "../../Lib/types/tweet.type";
 
 
 //Create/Post
-export const reposCreatetTweet = async (tweet: TweetType): Promise<TweetType> => {
+export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => {
     const newTweet = new TweetModel(tweet);
     await newTweet.save();
     if(!newTweet)
