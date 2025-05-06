@@ -2,10 +2,6 @@ import mongoose, {Document, Schema, model } from 'mongoose';
 import { UserType } from '../types/user.types';
 
 const userSchema: Schema = new Schema({
-  _id: {
-    type: String, 
-    required: true
-  },
   //needs to be indexed
   username: { 
     type: String, 
