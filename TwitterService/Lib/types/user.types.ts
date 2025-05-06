@@ -8,5 +8,5 @@ export type UserType = {
     //   even though it is part of the schema? 
     _id?: ObjectId;
     username: string;
-    displayedName: string;
+    displayName: string;
 }
