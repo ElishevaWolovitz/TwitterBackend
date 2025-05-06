@@ -1,5 +1,5 @@
 import mongoose, {Document, Schema, model } from 'mongoose';
-import { User } from '../types/user.types';
+import { UserType } from '../types/user.types';
 
 const userSchema: Schema = new Schema({
   _id: {
@@ -19,4 +19,4 @@ const userSchema: Schema = new Schema({
 },{collection: 'users'});
 
 //Q: What is the purpose of the & Document? 
-export const UserModel = model<User & Document>('User', userSchema);
+export const UserModel = model<UserType & Document>('User', userSchema);

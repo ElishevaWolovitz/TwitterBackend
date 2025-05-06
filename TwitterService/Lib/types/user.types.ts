@@ -3,7 +3,7 @@
 //   importing from mongo or from mongoose?
 import { ObjectId } from "mongoose";
 
-export type User = {
+export type UserType = {
     //Q: Do i not need to put _id as part of the type 
     //   even though it is part of the schema? 
     _id?: ObjectId;
