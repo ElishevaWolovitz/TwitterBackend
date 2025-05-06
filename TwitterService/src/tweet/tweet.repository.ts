@@ -15,7 +15,7 @@ export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => 
 //Read All/Get All
 //Q: What should the return type be here? Should i make a type for item? 
 export const reposReadAllTweets = async (): Promise<TweetType[]>  => {
-    const readItems = await TweetModel.find();
+    const readItems = await TweetModel.find().populate('userId');
     if(!readItems)
         throw new Error('Items not found in DB (in reposReadAllTweets)');
     return readItems;
@@ -23,7 +23,7 @@ export const reposReadAllTweets = async (): Promise<TweetType[]>  => {
 
 //Read One
 export const reposReadTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
-    const readTweet = await TweetModel.findById(tweetId); 
+    const readTweet = await TweetModel.findById(tweetId).populate('userId'); 
     if(!readTweet)
         throw new Error('Tweet not found in DB (in reposReadTweet)');
     return readTweet;
