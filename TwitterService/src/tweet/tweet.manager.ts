@@ -15,7 +15,7 @@ export const manageCreateTweet = async (tweet: TweetType):
 };
 
 //Read All
-export const manageReadAllTweet = async ():
+export const manageReadAllTweets = async ():
     Promise<TweetType[]> => {
     return reposReadAllTweets();
 }; 
