@@ -14,12 +14,12 @@ import {
 const router: Router = express.Router();
 
 router.post(
-    '/newUser', 
+    '/newuser', 
     //validateBody(createItemSchema), 
     controlCreateUser
 );
 router.get(
-    '/allUsers', 
+    '/allusers', 
     controlReadAllUsers
 );
 
