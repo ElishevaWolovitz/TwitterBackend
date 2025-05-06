@@ -1,5 +1,5 @@
 import mongoose, {Document, Schema, model} from 'mongoose';
-import { Tweet } from '../types/tweet.type';
+import { TweetType } from '../types/tweet.type';
 
 const tweetSchema: Schema = new Schema({
   _id: {
@@ -38,4 +38,4 @@ const tweetSchema: Schema = new Schema({
 },{collection: 'tweets'});
 
 //Q: What is the purpose of the & Document? 
-export const TweetModel = model<Tweet & Document>('Tweet', tweetSchema);
+export const TweetModel = model<TweetType & Document>('Tweet', tweetSchema);
