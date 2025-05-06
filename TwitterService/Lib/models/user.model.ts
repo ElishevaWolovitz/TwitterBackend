@@ -2,7 +2,6 @@ import mongoose, {Document, Schema, model } from 'mongoose';
 import { UserType } from '../types/user.types';
 
 const userSchema: Schema = new Schema({
-  //needs to be indexed
   username: { 
     type: String, 
     required: true,
@@ -14,5 +13,6 @@ const userSchema: Schema = new Schema({
   }
 },{collection: 'users'});
 
+userSchema.index({ username: 1 }); // 1 = ascending order;
 //Q: What is the purpose of the & Document? 
 export const UserModel = model<UserType & Document>('User', userSchema);
