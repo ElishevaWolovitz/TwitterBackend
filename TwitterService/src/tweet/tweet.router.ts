@@ -6,19 +6,19 @@ import {
     controlUpdateTweet, 
     controlDeleteTweet 
 } from './tweet.controller';
-// import {
-//     createItemSchema,
-//     updateItemSchema,
-//     idParamSchema
-//   } from './item.validator';
-//   import { validateBody, validateParams } from '../joi.functions';
+import {
+    tweetBodySchema,
+    tweetUpdateBodySchema,
+    tweetIdParamSchema
+  } from './tweet.validator';
+  import { validateBody, validateParams } from '../../Lib/joi/joi.functions';
 
 
 const router: Router = express.Router();
 
 router.post(
     '/newtweet', 
-    //validateBody(createItemSchema), 
+    validateBody(tweetBodySchema), 
     controlCreateTweet
 );
 router.get(
@@ -27,18 +27,18 @@ router.get(
 );
 router.get(
     '/tweet/:id', 
-    //validateParams(idParamSchema), 
+    validateParams(tweetIdParamSchema), 
     controlReadTweet
 );
 router.put(
     '/updatetweet/:id', 
-    //validateParams(idParamSchema), 
-    //validateBody(updateItemSchema), 
+    validateParams(tweetIdParamSchema), 
+    validateBody(tweetUpdateBodySchema), 
     controlUpdateTweet
 );
 router.delete(
     '/deletetweet/:id', 
-    //validateParams(idParamSchema), 
+    validateParams(tweetIdParamSchema), 
     controlDeleteTweet
 );
 
