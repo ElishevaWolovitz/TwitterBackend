@@ -16,6 +16,8 @@ export const controlCreateUser = async (req: Request, res: Response) => {
         res.status(400).json({ error: error.message })});
     if(createUserResult)
         res.status(201).json(createUserResult);
+    else
+        res.status(400).json({ message: "User could not be created (in controlCreateUser)" });
 };
 
 // Read All
