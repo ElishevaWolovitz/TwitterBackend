@@ -1,14 +1,14 @@
 import express, { Router } from 'express';
 import { controlCreateUser, controlReadAllUsers } from './user.controller';
-import { canCreateUser } from './user.validator';
-import { validateBody, validateParams } from '../../Lib/joi/joi.functions';
+import { userBodySchema } from './user.validator';
+import { validateBody } from '../../Lib/joi/joi.functions';
 
 
 const router: Router = express.Router();
 
 router.post(
     '/newuser', 
-    validateBody(canCreateUser), 
+    validateBody(userBodySchema), 
     controlCreateUser
 );
 router.get(
