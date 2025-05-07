@@ -11,6 +11,7 @@ const tweetSchema: Schema = new Schema({
   tweetName: { 
     type: String, 
     required: true,
+    index: true,
   },
   userId: {
     type: Schema.Types.ObjectId,
@@ -38,6 +39,6 @@ const tweetSchema: Schema = new Schema({
   }
 },{collection: 'tweets'});
 
-tweetSchema.index({ tweetName: 1 }); // 1 = ascending order;
+//tweetSchema.index({ tweetName: 1 }); // 1 = ascending order;
 //Q: What is the purpose of the & Document? 
 export const TweetModel = model<TweetType & Document>('TweetModel', tweetSchema);
