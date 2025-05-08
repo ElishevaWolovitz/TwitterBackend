@@ -12,7 +12,7 @@ import {errorHandler } from '../../Lib/handler/error.handler';
 import {sucessHandler} from '../../Lib/handler/sucess.handler';
 
 
-//Q: Do all functions in manager and repository also have to be async and await? or just here in controller? 
+//Q7: Do all functions in manager and repository also have to be async and await? or just here in controller? 
 // Create
 export const controlCreateTweet = async (req: Request, res: Response) => {
     const tweet = new TweetModel(req.body as TweetType);

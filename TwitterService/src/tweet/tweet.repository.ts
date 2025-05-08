@@ -2,8 +2,8 @@ import { Types } from "mongoose";
 import { TweetModel } from "../../Lib/models/tweet.model";
 import { TweetType } from "../../Lib/types/tweet.type";
 
-//Q: Have not changed functions here to be neater like in user.repository. Want to check which is better
-//Create/Post
+//Q8: Have not changed functions here to be neater like in user.repository. Want to check which is better
+// Create
 export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => {
     const newTweet = new TweetModel(tweet);
     await newTweet.save();
@@ -12,7 +12,7 @@ export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => 
     return newTweet; 
 };
 
-//Read All/Get All
+// Read All
 export const reposReadAllTweets = async (): Promise<TweetType[]>  => {
     const readItems = await TweetModel.find(); 
     if(!readItems)
@@ -20,7 +20,7 @@ export const reposReadAllTweets = async (): Promise<TweetType[]>  => {
     return readItems;
 }
 
-//Read One
+// Read One
 export const reposReadTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
     const readTweet = await TweetModel.findById(tweetId); 
     if(!readTweet)
@@ -28,7 +28,7 @@ export const reposReadTweet = async (tweetId: string | Types.ObjectId): Promise<
     return readTweet;
 };
 
-//Update   
+// Update   
 export const reposUpdateTweet = async ( tweetId: string | Types.ObjectId, updateData: Partial<TweetType>): Promise<TweetType> => {
     const updatedTweet = await TweetModel.findByIdAndUpdate(tweetId, updateData, { new: true });
     if(!updatedTweet)
@@ -36,7 +36,7 @@ export const reposUpdateTweet = async ( tweetId: string | Types.ObjectId, update
     return updatedTweet;
 };
 
-//Delete
+// Delete
 export const reposDeleteTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
     const deletedTweet = await TweetModel.findByIdAndDelete(tweetId); 
     if(!deletedTweet)

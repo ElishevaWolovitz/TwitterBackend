@@ -14,5 +14,5 @@ const userSchema: Schema = new Schema({
   }
 },{collection: 'users'});
 
-//Q: What is the purpose of the & Document? 
+//Q3: What is the purpose of the & Document? 
 export const UserModel = model<UserType & Document>('UserModel', userSchema);

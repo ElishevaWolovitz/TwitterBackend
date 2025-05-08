@@ -14,26 +14,26 @@ export const manageCreateTweet = async (tweet: TweetType):
     return reposCreateTweet(tweet); 
 };
 
-//Read All
+// Read All
 export const manageReadAllTweets = async ():
     Promise<TweetType[]> => {
     return reposReadAllTweets();
 }; 
 
-// //Read One
+// Read One
 export const manageReadTweet = async (tweetId: string | Types.ObjectId): 
     Promise<TweetType> => {
     return reposReadTweet(tweetId);
 };
 
-//Update   
+// Update   
 export const manageUpdateTweet = async ( tweetId: string | Types.ObjectId, 
     updateData: Partial<TweetType>): 
     Promise<TweetType> => {
     return reposUpdateTweet(tweetId, updateData);
 };
 
-//Delete
+// Delete
 export const manageDeleteTweet = async (tweetId: string | Types.ObjectId): 
     Promise<TweetType> => {
     return reposDeleteTweet(tweetId);
