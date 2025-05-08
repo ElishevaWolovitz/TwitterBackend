@@ -12,7 +12,7 @@ const mongoDBURL: string = process.env.MONGODB_URL || "mongodb://localhost:27017
 //Q10: Should there be a catch in here?
 app.use(express.json());
 app.use(userRoutes);
-app.use(tweetRoutes)
+app.use(tweetRoutes);
 
 
 //Q11: Should startServer be async/await? 
