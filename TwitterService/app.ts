@@ -8,11 +8,13 @@ dotenv.config();
 const app:  Application = express();
 const PORT: number = parseInt(process.env.PORT || '5000', 10); 
 const mongoDBURL: string = process.env.MONGODB_URL || "mongodb://localhost:27017/MiniCRUD";
+
+//Q10: Should there be a catch in here?
 app.use(express.json());
 app.use(userRoutes);
 app.use(tweetRoutes)
 
-//Q10: Should there be a catch in here?
+
 //Q11: Should startServer be async/await? 
 const startServer = () => {
     mongoose.connect(mongoDBURL)
