@@ -2,7 +2,6 @@ import {
     reposCreateUser, 
     reposReadAllUsers
 } from "./user.repository";
-import { Types } from 'mongoose';
 import { UserType } from "../../Lib/types/user.types";
 
 // Create
