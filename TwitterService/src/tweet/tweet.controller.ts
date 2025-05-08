@@ -8,13 +8,13 @@ import {
     manageDeleteTweet 
 } from "./tweet.manager";
 import { TweetType } from "../../Lib/types/tweet.type";
-import {errorHandler} from '../../Lib/handler/error.handler';
+import {errorHandler } from '../../Lib/handler/error.handler';
 import {sucessHandler} from '../../Lib/handler/sucess.handler';
 
 
-// Create
 //Q: Do all functions in manager and repository also have to be async and await? or just here in controller? 
 //Q: Is the function inside the catch considered a annonymouse function and should be done differently? 
+// Create
 export const controlCreateTweet = async (req: Request, res: Response) => {
     const tweet = new TweetModel(req.body as TweetType);
     const createTweetResult = await manageCreateTweet(tweet).catch(errorHandler(res, 400));

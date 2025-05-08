@@ -12,12 +12,8 @@ app.use(express.json());
 app.use(userRoutes);
 app.use(tweetRoutes)
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello World!');
-})
-
-//Q: Should there be a catch in here?
-//Q: Should startServer be async/await? 
+//Q1: Should there be a catch in here?
+//Q2: Should startServer be async/await? 
 const startServer = () => {
     mongoose.connect(mongoDBURL)
     console.log("DB Connection Successful");
@@ -25,7 +21,6 @@ const startServer = () => {
         console.log(`Server started at port ${PORT}`);
     });
 };
-
 
 startServer();
 
