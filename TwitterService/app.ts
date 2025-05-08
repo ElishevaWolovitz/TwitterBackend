@@ -7,7 +7,7 @@ import tweetRoutes from './src/tweet/tweet.router';
 dotenv.config();
 const app:  Application = express();
 const PORT: number = parseInt(process.env.PORT || '5000', 10); 
-const mongoDBURL: string = process.env.MONGODB_URL || "mongodb://localhost:27017/MiniCRUD";
+const mongoDBURL: string = process.env.MONGODB_URL || "mongodb://localhost:27017/TwitterBackend";
 
 //Q10: Should there be a catch in here?
 app.use(express.json());
