@@ -8,8 +8,7 @@ import { UserType } from "../../Lib/types/user.types";
 import {errorHandler } from '../../Lib/handler/error.handler';
 import {sucessHandler} from '../../Lib/handler/sucess.handler';
 
-//Q: Do all functions in manager and repository also have to be async and await? or just here in controller? 
-//Q: Is the function inside the catch considered a annonymouse function and should be done differently? 
+//Q: Do all functions in manager and repository also have to be async and await? or just here in controller?  
 // Create
 export const controlCreateUser = async (req: Request, res: Response) => {
     const user = new UserModel(req.body as UserType);
