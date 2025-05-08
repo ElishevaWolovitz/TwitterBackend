@@ -4,27 +4,23 @@ import {
     manageCreateUser, 
     manageReadAllUsers
 } from "./user.manager";
-//import { handleError } from '../item.functions';
 import { UserType } from "../../Lib/types/user.types";
+import {errorHandler } from '../../Lib/handler/error.handler';
+import {sucessHandler} from '../../Lib/handler/sucess.handler';
 
 //Q: Do all functions in manager and repository also have to be async and await? or just here in controller? 
 //Q: Is the function inside the catch considered a annonymouse function and should be done differently? 
 // Create
 export const controlCreateUser = async (req: Request, res: Response) => {
     const user = new UserModel(req.body as UserType);
-    const createUserResult = await manageCreateUser(user).catch((error) => {
-        res.status(400).json({ error: error.message })});
+    const createUserResult = await manageCreateUser(user).catch(errorHandler(res, 400));
     if(createUserResult)
-        res.status(201).json(createUserResult);
-    else
-        res.status(400).json({ message: "User could not be created (in controlCreateUser)" });
+        sucessHandler(res, 'Created new user (in controller)', createUserResult, 200);
 };
 
 // Read All
 export const controlReadAllUsers = async (req: Request, res: Response) => {
-    const users = await manageReadAllUsers().catch((error) => res.status(400).json({ error: error.message }));
+    const users = await manageReadAllUsers().catch(errorHandler(res, 400));
     if(users)
-        res.status(200).json(users);
-    else 
-        res.status(404).json({ message: "Users could not be read (in controlReadAllUsers)" });
+        sucessHandler(res, 'Read all users (in controller)', users, 200);
 };
