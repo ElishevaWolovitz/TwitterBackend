@@ -12,8 +12,7 @@ export const reposCreateUser = async (user: UserType): Promise<UserType> => {
     //     throw new Error('User could not be created in DB (in reposCreateUser)');
     // return newUser; 
 };
-
-//Q: Is the return type here correct? 
+ 
 //Read All/Get All
 export const reposReadAllUsers = async (): Promise<UserType[]>  => {
     return await UserModel.find();
