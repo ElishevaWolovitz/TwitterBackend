@@ -2,7 +2,7 @@ import { Types } from "mongoose";
 import { TweetModel } from "../../Lib/models/tweet.model";
 import { TweetType } from "../../Lib/types/tweet.type";
 
-
+//Q: Have not changed functions here to be neater like in user.repository. Want to check which is better
 //Create/Post
 export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => {
     const newTweet = new TweetModel(tweet);
@@ -13,7 +13,6 @@ export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => 
 };
 
 //Read All/Get All
-//Q: What should the return type be here? Should i make a type for item? 
 export const reposReadAllTweets = async (): Promise<TweetType[]>  => {
     const readItems = await TweetModel.find(); 
     if(!readItems)

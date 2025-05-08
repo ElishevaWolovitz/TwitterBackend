@@ -7,12 +7,10 @@ import {
     reposDeleteTweet 
 } from "./tweet.repository";
 import { TweetType } from "../../Lib/types/tweet.type";
-//import { UserType } from "../../Lib/types/user.types";
 
 // Create
 export const manageCreateTweet = async (tweet: TweetType): 
     Promise<TweetType> => {
-    //put check here for userId in tweet to see if it exists in DB 
     return reposCreateTweet(tweet); 
 };
 

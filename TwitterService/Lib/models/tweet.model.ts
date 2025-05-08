@@ -1,4 +1,4 @@
-import mongoose, {Document, Schema, model} from 'mongoose';
+import {Document, Schema, model} from 'mongoose';
 import { TweetType } from '../types/tweet.type';
 
 const tweetSchema: Schema = new Schema({
@@ -16,13 +16,11 @@ const tweetSchema: Schema = new Schema({
   userId: {
     type: Schema.Types.ObjectId,
     required: true,
-    //Q: how to reference to the _id of the user model?
     ref: 'UserModel',
   },
   text: {
     type: String,
     required: true,
-    //Q: Is this how to do max length?
     maxlength: 200,
   },
   media: {
@@ -39,6 +37,5 @@ const tweetSchema: Schema = new Schema({
   }
 },{collection: 'tweets'});
 
-//tweetSchema.index({ tweetName: 1 }); // 1 = ascending order;
 //Q: What is the purpose of the & Document? 
 export const TweetModel = model<TweetType & Document>('TweetModel', tweetSchema);

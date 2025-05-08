@@ -14,6 +14,5 @@ const userSchema: Schema = new Schema({
   }
 },{collection: 'users'});
 
-//userSchema.index({ username: 1 }); // 1 = ascending order;
 //Q: What is the purpose of the & Document? 
 export const UserModel = model<UserType & Document>('UserModel', userSchema);

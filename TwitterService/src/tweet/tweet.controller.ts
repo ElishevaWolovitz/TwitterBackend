@@ -13,7 +13,6 @@ import {sucessHandler} from '../../Lib/handler/sucess.handler';
 
 
 //Q: Do all functions in manager and repository also have to be async and await? or just here in controller? 
-//Q: Is the function inside the catch considered a annonymouse function and should be done differently? 
 // Create
 export const controlCreateTweet = async (req: Request, res: Response) => {
     const tweet = new TweetModel(req.body as TweetType);
