@@ -17,27 +17,27 @@ import {
 const router: Router = express.Router();
 
 router.post(
-    '/newtweet', 
+    '/', 
     validateBody(tweetBodySchema), 
     controlCreateTweet
 );
 router.get(
-    '/alltweets', 
+    '/', 
     controlReadAllTweets
 );
 router.get(
-    '/tweet/:id', 
+    '/:id', 
     validateParams(tweetIdParamSchema), 
     controlReadTweet
 );
 router.put(
-    '/updatetweet/:id', 
+    '/:id', 
     validateParams(tweetIdParamSchema), 
     validateBody(tweetUpdateBodySchema), 
     controlUpdateTweet
 );
 router.delete(
-    '/deletetweet/:id', 
+    '/:id', 
     validateParams(tweetIdParamSchema), 
     controlDeleteTweet
 );
