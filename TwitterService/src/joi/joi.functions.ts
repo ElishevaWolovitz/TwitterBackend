@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 
-//Q1: Should the type for data not be any? 
 const runValidation = <T>(schema: Joi.ObjectSchema<T>, data: T, res: Response, next: NextFunction ): void => {
   const { error } = schema.validate(data, { abortEarly: false });
   if (error) {

@@ -37,5 +37,4 @@ const tweetSchema: Schema = new Schema({
   }
 },{collection: 'tweets'});
 
-//Q: What is the purpose of the & Document? 
 export const TweetModel = model<TweetType & Document>('TweetModel', tweetSchema);
