@@ -2,23 +2,15 @@ import { Types } from "mongoose";
 import { TweetModel } from "../models/tweet.model";
 import { TweetType } from "../types/tweet.type";
 
-//Q8: Have not changed functions here to be neater like in user.repository. Want to check which is better
 // Create
 export const reposCreateTweet = async (tweet: TweetType): Promise<TweetType> => {
-    const newTweet = new TweetModel(tweet);
-    await newTweet.save();
-    if(!newTweet)
-        throw new Error('Tweet could not be created in DB (in reposCreateTweet)');
-    return newTweet; 
+    return await new TweetModel(tweet).save(); 
 };
 
 // Read All
 export const reposReadAllTweets = async (): Promise<TweetType[]>  => {
-    const readItems = await TweetModel.find(); 
-    if(!readItems)
-        throw new Error('Items not found in DB (in reposReadAllTweets)');
-    return readItems;
-}
+    return await TweetModel.find(); 
+};
 
 // Read One
 export const reposReadTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
@@ -40,6 +32,6 @@ export const reposUpdateTweet = async ( tweetId: string | Types.ObjectId, update
 export const reposDeleteTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
     const deletedTweet = await TweetModel.findByIdAndDelete(tweetId); 
     if(!deletedTweet)
-        throw new Error("Tweet not found in DB (in reposDeleteTweet)");
+        throw new Error('Tweet not found in DB (in reposDeleteTweet)');
     return deletedTweet; 
 };
