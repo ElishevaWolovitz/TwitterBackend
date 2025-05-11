@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { TweetModel } from "../../Lib/models/tweet.model";
+import { TweetModel } from "../models/tweet.model";
 import { 
     manageCreateTweet, 
     manageReadAllTweets, 
@@ -7,9 +7,9 @@ import {
     manageUpdateTweet, 
     manageDeleteTweet 
 } from "./tweet.manager";
-import { TweetType } from "../../Lib/types/tweet.type";
-import {errorHandler } from '../../Lib/handler/error.handler';
-import {sucessHandler} from '../../Lib/handler/sucess.handler';
+import { TweetType } from "../types/tweet.type";
+import {errorHandler } from '../handler/error.handler';
+import {sucessHandler} from '../handler/sucess.handler';
 
 
 //Q7: Do all functions in manager and repository also have to be async and await? or just here in controller? 

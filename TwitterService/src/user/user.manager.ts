@@ -2,7 +2,7 @@ import {
     reposCreateUser, 
     reposReadAllUsers
 } from "./user.repository";
-import { UserType } from "../../Lib/types/user.types";
+import { UserType } from "../types/user.types";
 
 // Create
 export const manageCreateUser = async (user: UserType): Promise<UserType> => {

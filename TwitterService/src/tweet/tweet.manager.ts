@@ -6,7 +6,7 @@ import {
     reposUpdateTweet, 
     reposDeleteTweet 
 } from "./tweet.repository";
-import { TweetType } from "../../Lib/types/tweet.type";
+import { TweetType } from "../types/tweet.type";
 
 // Create
 export const manageCreateTweet = async (tweet: TweetType): 

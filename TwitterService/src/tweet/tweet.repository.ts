@@ -1,6 +1,6 @@
 import { Types } from "mongoose";
-import { TweetModel } from "../../Lib/models/tweet.model";
-import { TweetType } from "../../Lib/types/tweet.type";
+import { TweetModel } from "../models/tweet.model";
+import { TweetType } from "../types/tweet.type";
 
 //Q8: Have not changed functions here to be neater like in user.repository. Want to check which is better
 // Create

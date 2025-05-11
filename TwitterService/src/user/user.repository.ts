@@ -1,5 +1,5 @@
-import { UserModel }from "../../Lib/models/user.model";
-import { UserType } from "../../Lib/types/user.types";
+import { UserModel }from "../models/user.model";
+import { UserType } from "../types/user.types";
 
 
 //Create/Post
