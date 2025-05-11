@@ -6,10 +6,10 @@ import { UserType } from "../types/user.types";
 
 // Create
 export const manageCreateUser = async (user: UserType): Promise<UserType> => {
-    return reposCreateUser(user); 
+    return await reposCreateUser(user); 
 };
 
 //Read All
 export const manageReadAllUsers = async (): Promise<UserType[]> => {
-    return reposReadAllUsers();
+    return await reposReadAllUsers();
 }; 
