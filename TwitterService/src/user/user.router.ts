@@ -1,7 +1,7 @@
 import express, { Router } from 'express';
 import { controlCreateUser, controlReadAllUsers } from './user.controller';
 import { userBodySchema } from './user.validator';
-import { validateBody } from '../../Lib/joi/joi.functions';
+import { validateBody } from '../joi/joi.functions';
 
 
 const router: Router = express.Router();

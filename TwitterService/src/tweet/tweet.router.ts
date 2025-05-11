@@ -11,7 +11,7 @@ import {
     tweetUpdateBodySchema,
     tweetIdParamSchema
   } from './tweet.validator';
-  import { validateBody, validateParams } from '../../Lib/joi/joi.functions';
+  import { validateBody, validateParams } from '../joi/joi.functions';
 
 
 const router: Router = express.Router();
