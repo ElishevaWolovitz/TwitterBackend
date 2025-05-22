@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { UserModel } from "../models/user.model";
 import { 
     manageCreateUser, 
     manageReadAllUsers
@@ -10,7 +9,7 @@ import { successHandler } from '../handler/success.handler';
 
 // Create
 export const controlCreateUser = async (req: Request, res: Response) => {
-    const user = new UserModel(req.body as UserType);
+    const user = req.body as UserType;
     const createUserResult = await manageCreateUser(user).catch(errorHandler(res, 400));
     if(createUserResult)
         successHandler(res, 'Created new user (in controller)', createUserResult, 200);

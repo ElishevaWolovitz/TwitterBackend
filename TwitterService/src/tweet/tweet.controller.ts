@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { TweetModel } from "../models/tweet.model";
 import { 
     manageCreateTweet, 
     manageReadAllTweets, 
@@ -13,7 +12,7 @@ import {successHandler} from '../handler/success.handler';
 
 // Create
 export const controlCreateTweet = async (req: Request, res: Response) => {
-    const tweet = new TweetModel(req.body as TweetType);
+    const tweet = req.body as TweetType;
     const createTweetResult = await manageCreateTweet(tweet).catch(errorHandler(res, 400));
     if(createTweetResult)
         successHandler(res, 'Created new tweet (in controller)', createTweetResult, 200);
