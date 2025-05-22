@@ -30,7 +30,7 @@ router.get(
     validateParams(tweetIdParamSchema), 
     controlReadTweet
 );
-router.put(
+router.patch(
     '/:id', 
     validateParams(tweetIdParamSchema), 
     validateBody(tweetUpdateBodySchema), 
