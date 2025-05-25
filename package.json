@@ -1,10 +1,10 @@
 {
   "name": "twitterbackend",
   "version": "1.0.0",
-  "main": "TwitterSevice/app.ts",
+  "main": "TwitterService/app.ts",
   "scripts": {
     "start": "ts-node TwitterService/app.ts",
-    "dev": "nodemon --exec ts-node TwitterService/app.ts"
+    "dev": "nodemon --watch TwitterService --ext ts --exec ts-node TwitterService/app.ts"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
     "@types/node": "^22.15.3",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
   }
 }
