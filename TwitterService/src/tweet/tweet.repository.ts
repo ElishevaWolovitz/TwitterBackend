@@ -16,7 +16,7 @@ export const repositoryReadAllTweets = async (): Promise<TweetType[]>  => {
 export const repositoryReadTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
     const readTweet = await TweetModel.findById(tweetId); 
     if(!readTweet)
-        throw new Error(`Tweet (${tweetId}) not able to be read (in repositoryReadTweet)`);
+        throw new Error(`Tweet (${tweetId}) not able to be read.`);
     return readTweet;
 };
 
@@ -24,7 +24,7 @@ export const repositoryReadTweet = async (tweetId: string | Types.ObjectId): Pro
 export const repositoryUpdateTweet = async ( tweetId: string | Types.ObjectId, updateData: Partial<TweetType>): Promise<TweetType> => {
     const updatedTweet = await TweetModel.findByIdAndUpdate(tweetId, updateData, { new: true });
     if(!updatedTweet)
-        throw new Error(`Tweet (${tweetId}) not able to be updated (in repositoryUpdateTweet)`);
+        throw new Error(`Tweet (${tweetId}) not able to be updated.`);
     return updatedTweet;
 };
 
@@ -32,6 +32,6 @@ export const repositoryUpdateTweet = async ( tweetId: string | Types.ObjectId, u
 export const repositoryDeleteTweet = async (tweetId: string | Types.ObjectId): Promise<TweetType> => {
     const deletedTweet = await TweetModel.findByIdAndDelete(tweetId); 
     if(!deletedTweet)
-        throw new Error(`Tweet (${tweetId}) not able to be deleted (in repositoryDeleteTweet)`);
+        throw new Error(`Tweet (${tweetId}) not able to be deleted.`);
     return deletedTweet; 
 };

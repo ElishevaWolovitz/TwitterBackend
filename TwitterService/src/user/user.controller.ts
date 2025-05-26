@@ -12,12 +12,12 @@ export const controlCreateUser = async (req: Request, res: Response) => {
     const user = req.body as UserType;
     const createUserResult = await manageCreateUser(user).catch(errorHandler(res, 400));
     if(createUserResult)
-        successHandler(res, 'Created new user (in controller)', createUserResult, 200);
+        successHandler(res, `Created new user (user id: ${user._id}).`, createUserResult, 200);
 };
 
 // Read All
 export const controlReadAllUsers = async (req: Request, res: Response) => {
     const users = await manageReadAllUsers().catch(errorHandler(res, 400));
     if(users)
-        successHandler(res, 'Read all users (in controller)', users, 200);
+        successHandler(res, `Read all users.`, users, 200);
 };
